@@ -15,4 +15,15 @@ class OrderSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Product
-        fields = ['prooduct', 'total']
+        fields = ['prooduct', 'total', 'user', 'products_id']
+        extra_kwargs = {'product': {'required': False}}
+
+    def create(self, validated_data):
+        Product_data = validated_data.pop('products_id')
+        user_data = validated_data.pop('user')
+
+        order = Order.objects.create(**validated_data)
+        for product in Product_data:
+            order.product.add(product)
+
+        return order
