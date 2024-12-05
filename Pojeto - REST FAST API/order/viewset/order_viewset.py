@@ -10,4 +10,8 @@ from order.serializers import OrderSerializer
 class OrderViewSet(ModelViewSet):
 
     serializer_class = OrderSerializer
+<<<<<<< HEAD
     queryset = Order.objects.all()
+=======
+    queryset - Order.objects.all()
+>>>>>>> df4847e5 (Incluindo o viewset)
