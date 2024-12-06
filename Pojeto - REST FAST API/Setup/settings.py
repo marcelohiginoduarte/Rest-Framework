@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'order',
     'bookstore',
-    'product',
+    'Product',
     'rest_framework',
     'django_extensions',
 ]

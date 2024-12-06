@@ -10,4 +10,4 @@ from Product.serializers import ProductSerializer
 class ProductViewSet(ModelViewSet):
 
     serializer_class = ProductSerializer
-    queryset - Product.objects.all()
+    queryset = Product.objects.all()
