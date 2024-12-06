@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_extensions',
     'debug_toolbar',
+    "rest_framework.authtoken",
 ]
 
 MIDDLEWARE = [
@@ -136,5 +137,12 @@ INTERNAL_IPS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 5
+    'PAGE_SIZE': 5,
+        "DEFAULT_AUTHENTICATION_CLASSES": [
+            "rest_framework.authentication.BasicAuthentication",
+            "rest_framework.authentication.SessionAuthentication",
+            "rest_framework.authentication.TokenAuthentication",
+            "rest_framework.authentication.TokenAuthentication",
+        ],
+
 }

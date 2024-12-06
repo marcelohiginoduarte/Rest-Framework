@@ -1,13 +1,11 @@
-from rest_framework import status
-from rest_framework.mixins import CreateModelMixin
-from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
-from Product.models import Product
-from Product.serializers import ProductSerializer
+from product.models import Category
+from product.serializers.category_serializer import CategorySerializer
 
 
-class ProductViewSet(ModelViewSet):
+class CategoryViewSet(ModelViewSet):
+    serializer_class = CategorySerializer
 
-    serializer_class = ProductSerializer
-    queryset = Product.objects.all()
+    def get_queryset(self):
+        return Category.objects.all().order_by("id")
