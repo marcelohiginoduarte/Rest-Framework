@@ -17,7 +17,6 @@ class OrderSerializer(serializers.ModelSerializer):
         return total
 
     class Meta:
-<<<<<<< HEAD
         model = Order
         fields = ["product", "total", "user", "products_id"]
         extra_kwargs = {"product": {"required": False}}
@@ -28,18 +27,6 @@ class OrderSerializer(serializers.ModelSerializer):
 
         order = Order.objects.create(user=user_data)
         for product in product_data:
-=======
-        model = Product
-        fields = ['prooduct', 'total', 'user', 'products_id']
-        extra_kwargs = {'product': {'required': False}}
-
-    def create(self, validated_data):
-        Product_data = validated_data.pop('products_id')
-        user_data = validated_data.pop('user')
-
-        order = Order.objects.create(**validated_data)
-        for product in Product_data:
->>>>>>> df4847e5 (Incluindo o viewset)
             order.product.add(product)
 
         return order
