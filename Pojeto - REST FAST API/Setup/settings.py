@@ -40,17 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'order',
     'bookstore',
-<<<<<<< HEAD
     'Product',
     'rest_framework',
     'django_extensions',
     'debug_toolbar',
     "rest_framework.authtoken",
-=======
-    'product',
-    'rest_framework',
-    'django_extensions',
->>>>>>> df4847e5 (Incluindo o viewset)
 ]
 
 MIDDLEWARE = [
